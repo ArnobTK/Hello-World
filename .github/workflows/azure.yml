@@ -44,3 +44,9 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Setup Java 1.8.x
+      uses: actions/setup-java@v1
+      with:
+        # If your pom.xml <maven.compiler.source> version is not in 1.8.x
+        # Please change the Java version to match the version in pom.xml <maven.compiler.source>
+        java-version: '1.8.x'
